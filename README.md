@@ -65,7 +65,7 @@ The probability of reaching the theoretical maximum (**94 rabbits**) is not "bas
 The distribution is NOT a smooth curve. It is a jagged landscape of attractors.
 (e.g., The probability spikes at **64 rabbits** and **43 rabbits** due to the `floor(n/2)` function creating synchronization in population growth.)
 
-![Probability Distribution Graph](https://your-image-url-here.com/graph.png)
+<img width="1389" height="691" alt="Rabbit Graph" src="https://github.com/user-attachments/assets/805545a0-997d-45d4-bb67-799ef3d848d2" />
 
 ---
 
@@ -102,9 +102,11 @@ def solve_rabbit_exact():
             
         current_states = next_states
 
-    return current_states
+    return current_states```
 
 (See rabbit_solver.py in this repo for the complete code)
+
+---
 
 📊 Final Stats (After 10 Turns)
 Rabbits	Probability	Status
@@ -115,8 +117,12 @@ Rabbits	Probability	Status
 64	2.31%	Notable Spike
 94	0.0493%	Theoretical Max (The Jackpot)
 
+---
+
 📝 Retrospective
 At the end of the rabbit's trail, there was no elegant equation—only an AI sitting on a bench.
+
+---
 
 Acknowledgments
 The Problem Author: For not giving up for a year.
