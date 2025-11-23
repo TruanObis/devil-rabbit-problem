@@ -106,7 +106,7 @@ def solve_rabbit_exact():
 ```
 
 
-(See rabbit_solver.py in this repo for the complete code)
+(See rabbit_exact_solver.py in this repo for the complete code)
 
 ---
 
