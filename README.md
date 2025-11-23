@@ -112,12 +112,12 @@ def solve_rabbit_exact():
 
 ## 📊 Final Stats (After 10 Turns)
 **Rabbits	Probability	Status**<br>
-2	5.63%	The "Bad Luck" Group (Never met)<br>
-3	1.88%	Met once, then scattered<br>
-10~20	~70%	The "Normal" Growth<br>
-43	2.31%	Notable Spike<br>
-64	2.31%	Notable Spike<br>
-94	0.0493%	Theoretical Max (The Jackpot)
+**2**	5.63%	The "Bad Luck" Group (Never met)<br>
+**3**	1.88%	Met once, then scattered<br>
+**10~20**	~70%	The "Normal" Growth<br>
+**43**	2.31%	Notable Spike<br>
+**64**	2.31%	Notable Spike<br>
+**94**	0.0493%	Theoretical Max (The Jackpot)
 
 ---
 
