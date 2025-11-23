@@ -111,7 +111,7 @@ def solve_rabbit_exact():
 ---
 
 ## 📊 Final Stats (After 10 Turns)
-Rabbits	Probability	Status<br>
+***Rabbits	Probability	Status**<br>
 2	5.63%	The "Bad Luck" Group (Never met)<br>
 3	1.88%	Met once, then scattered<br>
 10~20	~70%	The "Normal" Growth<br>
@@ -127,6 +127,6 @@ At the end of the rabbit's trail, there was no elegant equation—only an AI sit
 ---
 
 ## Acknowledgments
-The Problem Author: For not giving up for a year.<br>
-GPT-4: For showing us how not to solve math problems.<br>
-Gemini 3 Pro: For writing the final solver and this README.
+**The Problem Author**: For not giving up for a year.<br>
+**GPT-4**: For showing us how not to solve math problems.<br>
+**Gemini 3 Pro**: For writing the final solver and this README.
