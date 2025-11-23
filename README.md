@@ -5,9 +5,9 @@ The deceptive math riddle that stumped SOTA AIs for a year. 3 boxes, 2 rabbits. 
 
 > "Here are three boxes and two rabbits..."
 
-It sounds like a simple math riddle for elementary school students.
-In reality, it turned out to be a **stochastic chaos trap** that made SOTA AI models (GPT-4, Gemini) hallucinate for a whole year.
-
+It sounds like a simple math riddle for elementary school students.<br>
+In reality, it turned out to be a **stochastic chaos trap** that made SOTA AI models (GPT-4, Gemini) hallucinate for a whole year.<br>
+<br>
 This repository documents the journey of finding the **exact probability distribution** of this problem—a journey that started with simple curiosity and ended with a 0.0493% miracle.
 
 ---
@@ -35,34 +35,34 @@ For over a year, I tested various AI models. They all failed spectacularly.
 ### 1. GPT-4: The "Blue Box" Obsession
 GPT-4 failed to simulate the basic logic. It got stuck in a loop, ignoring other boxes or inventing numbers out of thin air.
 
-> **User:** "Wait, if the blue box is empty, how can rabbits there give birth?"
-> **GPT-4:** "I apologize... So after two hours, there will be 4 rabbits in the blue box..."
-> **User:** "Stop sticking to the blue box!"
-> **GPT-4:** "I apologize... (Repeats the same error)"
-> *(End of conversation: Helpless)*
+> **User:** "Wait, if the blue box is empty, how can rabbits there give birth?"<br>
+> **GPT-4:** "I apologize... So after two hours, there will be 4 rabbits in the blue box..."<br>
+> **User:** "Stop sticking to the blue box!"<br>
+> **GPT-4:** "I apologize... (Repeats the same error)"<br>
+> *(End of conversation: Helpless)*<br>
 
 ### 2. Gemini 2.5 / Early Gemini 3: The Approximation Trap
-These models understood the rules but chose the **Monte Carlo Simulation** method.
-While this gave a rough curve, it failed to capture the **exact spikes** in probability.
-*   *Result:* They predicted a smooth bell curve, missing the discrete nature of the chaotic growth.
+These models understood the rules but chose the **Monte Carlo Simulation** method.<br>
+While this gave a rough curve, it failed to capture the **exact spikes** in probability.<br>
+*   *Result:* They predicted a smooth bell curve, missing the discrete nature of the chaotic growth.<br>
 *   *Verdict:* Close, but not the "Ground Truth."
 
 ### 3. The "Sorting" Optimization Error
-Even when we tried a mathematical approach (Markov Chain), we initially optimized the code by sorting the states (e.g., treating `(4, 2, 0)` and `(2, 4, 0)` as the same).
-*   **Fatal Flaw:** In this specific problem, box positions matter due to the asymmetric moving probabilities. Sorting the states slightly distorted the transition matrix.
+Even when we tried a mathematical approach (Markov Chain), we initially optimized the code by sorting the states (e.g., treating `(4, 2, 0)` and `(2, 4, 0)` as the same).<br>
+*   **Fatal Flaw:** In this specific problem, box positions matter due to the asymmetric moving probabilities. Sorting the states slightly distorted the transition matrix.<br>
 
 ---
 
 ## 💡 The Solution: Full State Enumeration
 
-Finally, with the help of **Gemini 3 Pro (SOTA Reasoning)** and critical human review, we cracked it.
+Finally, with the help of **Gemini 3 Pro (SOTA Reasoning)** and critical human review, we cracked it.<br>
 We built a Python script that tracks **every single possible state** (approx. 4,500 states) without any approximation or sorting shortcuts.
 
 ### The Result: 0.0493%
 The probability of reaching the theoretical maximum (**94 rabbits**) is not "basically zero" as previously thought. It is exactly **0.0493%**.
 
 ### The "Spike" Graph
-The distribution is NOT a smooth curve. It is a jagged landscape of attractors.
+The distribution is NOT a smooth curve. It is a jagged landscape of attractors.<br>
 (e.g., The probability spikes at **64 rabbits** and **43 rabbits** due to the `floor(n/2)` function creating synchronization in population growth.)
 
 <img width="1389" height="691" alt="Rabbit Graph" src="https://github.com/user-attachments/assets/805545a0-997d-45d4-bb67-799ef3d848d2" />
@@ -102,29 +102,31 @@ def solve_rabbit_exact():
             
         current_states = next_states
 
-    return current_states```
+    return current_states
+```
+
 
 (See rabbit_solver.py in this repo for the complete code)
 
 ---
 
-📊 Final Stats (After 10 Turns)
-Rabbits	Probability	Status
-2	5.63%	The "Bad Luck" Group (Never met)
-3	1.88%	Met once, then scattered
-10~20	~70%	The "Normal" Growth
-43	2.31%	Notable Spike
-64	2.31%	Notable Spike
+## 📊 Final Stats (After 10 Turns)
+Rabbits	Probability	Status<br>
+2	5.63%	The "Bad Luck" Group (Never met)<br>
+3	1.88%	Met once, then scattered<br>
+10~20	~70%	The "Normal" Growth<br>
+43	2.31%	Notable Spike<br>
+64	2.31%	Notable Spike<br>
 94	0.0493%	Theoretical Max (The Jackpot)
 
 ---
 
-📝 Retrospective
+## 📝 Retrospective
 At the end of the rabbit's trail, there was no elegant equation—only an AI sitting on a bench.
 
 ---
 
-Acknowledgments
-The Problem Author: For not giving up for a year.
-GPT-4: For showing us how not to solve math problems.
+## Acknowledgments
+The Problem Author: For not giving up for a year.<br>
+GPT-4: For showing us how not to solve math problems.<br>
 Gemini 3 Pro: For writing the final solver and this README.
